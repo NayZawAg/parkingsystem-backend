@@ -1,0 +1,1117 @@
+client:
+ name: '三次市'
+
+client_locations:
+- name: '広島三次ワイナリー駐車場（自動カウント用※）'
+  address: '広島県三次市東酒屋町10445-3'
+  lat: 34.7778891
+  lng: 132.8669948
+  image: 'HiroshimaMiyoshiWinery.jpg'
+  capacity: 18
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '07:00:00'
+  closing_time: '19:59:59'
+  disabled_flag: 1
+  camera_flag: 1
+  crowd_level_display: 1
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_hiroshima_miyoshi_winery'
+  display_flag: 0
+  related_facilities_events: ''
+  display_order: 17
+  in_parking_coefficient: ''
+  capacity_calculation: 18
+  notes: '※入出庫自動カウント運用中止予定のため非表示で固定'
+  location_cameras:
+  - name: '広島三次ワイナリー（入口）'
+    in_flg: true
+    out_flg: false
+    dbx_folder_name: 'SY76JDV3YCKEH7WT111A'
+
+  - name: '広島三次ワイナリー（出口）'
+    in_flg: false
+    out_flg: true
+    dbx_folder_name: '432WXWF93FLRK5UH111A'
+
+- name: 'トレッタみよし駐車場'
+  address: '広島県三次市東酒屋町10438'
+  lat: 34.7762878096695
+  lng: 132.866578385772
+  image: 'TorrettaMiyoshi.jpg'
+  capacity: 73
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '07:00:00'
+  closing_time: '19:59:59'
+  disabled_flag: 1
+  camera_flag: 1
+  crowd_level_display: 1
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_tretta_miyoshi'
+  display_flag: 1
+  related_facilities_events: ''
+  display_order: 6
+  in_parking_coefficient: 1.6
+  capacity_calculation: 73
+  notes: ''
+  location_cameras:
+  - name: 'トレッタみよし（出入口1）'
+    in_flg: true
+    out_flg: true
+    dbx_folder_name: 'E6V3PS96BE7Z9M4W111A'
+
+- name: '三次もののけミュージアム駐車場'
+  address: '広島県三次市三次町1691番地4'
+  lat: 34.8153230259111
+  lng: 132.844617234698
+  image: 'MiyoshiMononokeMuseum.jpg'
+  capacity: 27
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '07:00:00'
+  closing_time: '19:59:59'
+  disabled_flag: 0
+  camera_flag: 1
+  crowd_level_display: 1
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_miyoshi_mononoke_muse'
+  display_flag: 1
+  related_facilities_events: '三次さくら祭り'
+  display_order: 14
+  in_parking_coefficient: ''
+  capacity_calculation: 27
+  notes: ''
+  location_cameras:
+  - name: '三次もののけミュージアム（入口1）'
+    in_flg: true
+    out_flg: false
+    dbx_folder_name: 'ZSSPEL66V5DWYX93111A'
+  
+  - name: '三次もののけミュージアム（出口1）'
+    in_flg: false
+    out_flg: true
+    dbx_folder_name: 'MXF1JX464T581YC3111A'
+
+- name: 'トレッタみよし駐車場'
+  address: '広島県三次市東酒屋町10438'
+  lat: 34.7762878096695
+  lng: 132.866578385772
+  image: 'TorrettaMiyoshi.jpg'
+  capacity: 73
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '07:00:00'
+  closing_time: '19:59:59'
+  disabled_flag: 1
+  camera_flag: 1
+  crowd_level_display: 1
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_tretta_miyoshi'
+  display_flag: 1
+  related_facilities_events: ''
+  display_order: 6
+  in_parking_coefficient: 1.6
+  capacity_calculation: 73
+  notes: ''
+  location_cameras:
+  - name: 'トレッタみよし（出入口2）'
+    in_flg: true
+    out_flg: true
+    dbx_folder_name: ''
+
+- name: '三次もののけミュージアム駐車場'
+  address: '広島県三次市三次町1691番地4'
+  lat: 34.8153230259111
+  lng: 132.844617234698
+  image: 'MiyoshiMononokeMuseum.jpg'
+  capacity: 27
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '07:00:00'
+  closing_time: '19:59:59'
+  disabled_flag: 0
+  camera_flag: 1
+  crowd_level_display: 1
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_miyoshi_mononoke_muse'
+  display_flag: 1
+  related_facilities_events: '三次さくら祭り'
+  display_order: 14
+  in_parking_coefficient: ''
+  capacity_calculation: 27
+  notes: ''
+  location_cameras:
+  - name: '三次もののけミュージアム（入口2）'
+    in_flg: true
+    out_flg: false
+    dbx_folder_name: ''
+  
+  - name: '三次もののけミュージアム（出口2）'
+    in_flg: false
+    out_flg: true
+    dbx_folder_name: ''
+
+- name: 'みよし運動公園南側駐車場'
+  address: '広島県三次市東酒屋町10445-3'
+  lat: 34.7773783503939
+  lng: 132.867970452247
+  image: 'MiyoshiSportsParkSouth.jpg'
+  capacity: 180
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '07:00:00'
+  closing_time: '19:59:59'
+  disabled_flag: 0
+  camera_flag: 1
+  crowd_level_display: 1
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_miyoshi_sports_park_minami'
+  display_flag: 1
+  related_facilities_events: ''
+  display_order: 7
+  in_parking_coefficient: ''
+  capacity_calculation: 180
+  notes: ''
+
+  location_cameras:
+  - name: '三次ワイナリー向かい運動公園駐車場（出入口1）'
+    in_flg: true
+    out_flg: true
+    dbx_folder_name: ''
+
+- name: 'みよしあそびの王国前駐車場'
+  address: ''
+  lat: 34.7786727893114
+  lng: 132.867643405501
+  image: 'MiyoshiAsobiOukokuFront.jpg'
+  capacity: 103
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '00:00:00'
+  closing_time: '00:00:00'
+  disabled_flag: 0
+  camera_flag: 0
+  crowd_level_display: 2
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_miyoshi_asobi_kingdom'
+  display_flag: 1
+  related_facilities_events: ''
+  display_order: 8
+  in_parking_coefficient: ''
+  capacity_calculation: 103
+  notes: ''
+
+- name: 'みよし運動公園テニスコート前駐車場'
+  address: ''
+  lat: 34.7807332852737
+  lng: 132.868291648544
+  image: 'MiyoshiSportsParkTennisFront.jpg'
+  capacity: 105
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '00:00:00'
+  closing_time: '00:00:00'
+  disabled_flag: 0
+  camera_flag: 0
+  crowd_level_display: 2
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_miyoshi_sports_park_tennis'
+  display_flag: 1
+  related_facilities_events: ''
+  display_order: 9
+  in_parking_coefficient: ''
+  capacity_calculation: 105
+  notes: ''
+
+- name: 'みよし運動公園多目的広場駐車場'
+  address: ''
+  lat: 34.7818755372384
+  lng: 132.869514735853
+  image: 'MiyoshiSportsParkMultiPurposeSpace.jpg'
+  capacity: 300
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '00:00:00'
+  closing_time: '00:00:00'
+  disabled_flag: 0
+  camera_flag: 0
+  crowd_level_display: 2
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_miyoshi_sports_park_multipurpose_square'
+  display_flag: 1
+  related_facilities_events: ''
+  display_order: 10
+  in_parking_coefficient: ''
+  capacity_calculation: 300
+  notes: ''
+
+- name: 'みよし運動公園北側駐車場'
+  address: ''
+  lat: 34.7819482354905
+  lng: 132.871116014654
+  image: 'MiyoshiSportsParkNorth.jpg'
+  capacity: 221
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '00:00:00'
+  closing_time: '00:00:00'
+  disabled_flag: 0
+  camera_flag: 0
+  crowd_level_display: 2
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_miyoshi_sports_park_north'
+  display_flag: 1
+  related_facilities_events: ''
+  display_order: 11
+  in_parking_coefficient: ''
+  capacity_calculation: 221
+  notes: ''
+
+- name: 'みよし運動公園東側駐車場'
+  address: ''
+  lat: 34.778930103169
+  lng: 132.872172805121
+  image: 'MiyoshiSportsParkEast.jpg'
+  capacity: 98
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '00:00:00'
+  closing_time: '00:00:00'
+  disabled_flag: 0
+  camera_flag: 0
+  crowd_level_display: 2
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_miyoshi_sports_park_east'
+  display_flag: 1
+  related_facilities_events: ''
+  display_order: 12
+  in_parking_coefficient: ''
+  capacity_calculation: 98
+  notes: ''
+
+- name: '東酒屋プール前駐車場'
+  address: ''
+  lat: 34.7800638905622
+  lng: 132.873367496658
+  image: 'HigashiSakeyaPoolFront.jpg'
+  capacity: 78
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '00:00:00'
+  closing_time: '00:00:00'
+  disabled_flag: 0
+  camera_flag: 0
+  crowd_level_display: 2
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_higashisakaya_pool_front'
+  display_flag: 1
+  related_facilities_events: ''
+  display_order: 13
+  in_parking_coefficient: ''
+  capacity_calculation: 78
+  notes: ''
+
+- name: '三次もののけミュージアム第２駐車場'
+  address: ''
+  lat: 34.8157881091664
+  lng: 132.845586182779
+  image: 'MiyoshiMononokeMuseum.jpg'
+  capacity: 30
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '00:00:00'
+  closing_time: '00:00:00'
+  disabled_flag: 0
+  camera_flag: 0
+  crowd_level_display: 2
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_miyoshi_mononoke_muse_second'
+  display_flag: 1
+  related_facilities_events: ''
+  display_order: 15
+  in_parking_coefficient: ''
+  capacity_calculation: 30
+  notes: ''
+
+- name: '尾関山公園駐車場'
+  address: '広島県三次市三次町中所439-3'
+  lat: 34.8157960663218
+  lng: 132.840731677574
+  image: 'OzekiyamaparkParking.jpg'
+  capacity: 37
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '00:00:00'
+  closing_time: '00:00:00'
+  disabled_flag: 0
+  camera_flag: 0
+  crowd_level_display: 2
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_ozekiyama_park'
+  display_flag: 1
+  related_facilities_events: '三次さくら祭り、ライトアップ'
+  display_order: 17
+  in_parking_coefficient: ''
+  capacity_calculation: 37
+  notes: ''
+
+- name: '広島三次ワイナリー駐車場'
+  address: ''
+  lat: 34.7776175257584
+  lng: 132.86697602582
+  image: 'HiroshimaMiyoshiWinery.jpg'
+  capacity: 20
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '00:00:00'
+  closing_time: '00:00:00'
+  disabled_flag: 0
+  camera_flag: 0
+  crowd_level_display: 99
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_hiroshima_miyoshi_winery_no_camera'
+  display_flag: 1
+  related_facilities_events: ''
+  display_order: 18
+  in_parking_coefficient: ''
+  capacity_calculation: 20
+  notes: ''
+
+- name: '広島三次ワイナリー第2駐車場'
+  address: ''
+  lat: 34.7791861120789
+  lng: 132.867126229541
+  image: 'HiroshimaMiyoshiWinery.jpg'
+  capacity: 115
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '00:00:00'
+  closing_time: '00:00:00'
+  disabled_flag: 0
+  camera_flag: 0
+  crowd_level_display: 99
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_hiroshima_miyoshi_winery_second'
+  display_flag: 1
+  related_facilities_events: ''
+  display_order: 19
+  in_parking_coefficient: ''
+  capacity_calculation: 115
+  notes: ''
+
+- name: '【臨時】三次中学校グラウンド'
+  address: ''
+  lat: 34.8136349498948
+  lng: 132.843425563547
+  image: 'Miyoshi_Sakura_Festival_Temporary_Parking.png'
+  capacity: ''
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '00:00:00'
+  closing_time: '00:00:00'
+  disabled_flag: 0
+  camera_flag: 0
+  crowd_level_display: 99
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_miyoshi_junior_high_school_ground'
+  display_flag: 1
+  related_facilities_events: "・開設日\n3/30（土），31（日），4/6（土），4/7（日）\n・開設時間\n9時～18時"
+  display_order: 20
+  in_parking_coefficient: ''
+  capacity_calculation: ''
+  notes: ''
+
+- name: '【臨時】(株)加藤組駐車場'
+  address: ''
+  lat: 34.8160484484389
+  lng: 132.842926672716
+  image: 'Miyoshi_Sakura_Festival_Temporary_Parking.png'
+  capacity: ''
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '00:00:00'
+  closing_time: '00:00:00'
+  disabled_flag: 0
+  camera_flag: 0
+  crowd_level_display: 99
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_kato_gumi_park'
+  display_flag: 1
+  related_facilities_events: "・開設日\n3/30（土），31（日），4/6（土），4/7（日）"
+  display_order: 21
+  in_parking_coefficient: ''
+  capacity_calculation: ''
+  notes: ''
+
+- name: '【臨時】尾関山ポンプ場前駐車場'
+  address: ''
+  lat: 34.8128818951395
+  lng: 132.841345587904
+  image: 'Miyoshi_Sakura_Festival_Temporary_Parking.png'
+  capacity: ''
+  start_time: '00:00:00'
+  end_time: '23:59:59'
+  opening_time: '00:00:00'
+  closing_time: '00:00:00'
+  disabled_flag: 0
+  camera_flag: 0
+  crowd_level_display: 99
+  icon_revert_flag: 0
+  gtag_event_name: 'parking_icon_click_?_ozekiyama_pumping_station_front'
+  display_flag: 1
+  related_facilities_events: "・開設日\n3/25（月）～4/7（日）"
+  display_order: 22
+  in_parking_coefficient: ''
+  capacity_calculation: ''
+  notes: ''
+
+
+client_facilities_events:
+- facilitiy_event_number: 1
+  slug: 'miyoshi-winery'
+  scale: 18.0
+  name: '広島三次ワイナリー'
+  address: '広島県三次市東酒屋町10445-3'
+  opening_hours: '9：30~18：00'
+  holiday: "12月29日~1月1日\n1月~3月第2水曜日"
+  phone_number: '0824-64-0200'
+  available_payment: ''
+  offical_url: 'https://www.miyoshi-winery.co.jp/'
+  lat: 34.7779435825516
+  lng: 132.866680981983
+  image: 'HiroshimaMiyoshiWinery.jpg'
+  disabled_flag: 0
+  icon_revert_flag: 0
+  gtag_event_name: 'facility_icon_click_?_miyoshi_winary'
+  gtag_event_card_name: 'facility_card_click_?_miyoshi_winary'
+  display_flag: 1
+  outline: ''
+  facility_event_type: 1
+  display_order: 1
+
+- facilitiy_event_number: 2
+  slug: 'torettamiyoshi'
+  scale: 18.1
+  name: 'トレッタみよし'
+  address: '広島県三次市東酒屋町10438'
+  opening_hours: '9：00~17：00'
+  holiday: "第2水曜日\n12月30日~1月4日"
+  phone_number: '0824-65-6311'
+  available_payment: ''
+  offical_url: 'https://www.torettamiyoshi.jp/'
+  lat: 34.7767800342449
+  lng: 132.866619108972
+  image: 'TorrettaMiyoshi.jpg'
+  disabled_flag: 0
+  icon_revert_flag: 0
+  gtag_event_name: 'facility_icon_click_?_tretta_miyoshi'
+  gtag_event_card_name: 'facility_card_click_?_tretta_miyoshi'
+  display_flag: 1
+  outline: ''
+  facility_event_type: 1
+  display_order: 2
+
+- facilitiy_event_number: 3
+  slug: 'miyoshi-mononoke'
+  scale: 18.0
+  name: '三次もののけミュージアム'
+  address: '広島県三次市三次町1691番地4'
+  opening_hours: '9：30~17：00（16：30最終入館）'
+  holiday: "毎週水曜日\n12月29日~1月3日"
+  phone_number: '0824-69-0111'
+  available_payment: ''
+  offical_url: 'https://miyoshi-mononoke.jp/'
+  lat: 34.8153736738345
+  lng: 132.845185862959
+  image: 'MiyoshiMononokeMuseum.jpg'
+  disabled_flag: 0
+  icon_revert_flag: 0
+  gtag_event_name: 'facility_icon_click_?_miyoshi_mononoke'
+  gtag_event_card_name: 'facility_card_click_?_miyoshi_mononoke'
+  display_flag: 1
+  outline: ''
+  facility_event_type: 1
+  display_order: 3
+
+- facilitiy_event_number: 4
+  slug: 'ozekiyama-park'
+  scale: 16.0
+  name: '尾関山公園'
+  address: '広島県三次市三次町中所439-3'
+  opening_hours: ''
+  holiday: ''
+  phone_number: '0824-63-9268（（一社）三次観光推進機構）'
+  available_payment: ''
+  offical_url: 'https://www.miyoshi-dmo.jp/'
+  lat: 34.8143228671812
+  lng: 132.840026256618
+  image: 'Ozekiyamapark.jpg'
+  disabled_flag: 0
+  icon_revert_flag: 0
+  gtag_event_name: 'facility_icon_click_?_ozekiyama_park'
+  gtag_event_card_name: 'facility_card_click_?_ozekiyama_park'
+  display_flag: 1
+  outline: ''
+  facility_event_type: 1
+  display_order: 4
+
+- facilitiy_event_number: 5
+  slug: 'sakura-festival'
+  scale: 16.0
+  name: '三次さくら祭り'
+  address: ''
+  opening_hours: ''
+  holiday: ''
+  phone_number: ''
+  available_payment: ''
+  offical_url: ''
+  lat: 34.81416575235816
+  lng: 132.83933396504528
+  image: 'Preparing.jpg'
+  disabled_flag: 0
+  icon_revert_flag: 0
+  gtag_event_name: 'event_icon_click_?_sakura_festival'
+  gtag_event_card_name: 'event_card_click_?_sakura_festival'
+  display_flag: 1
+  outline: ''
+  facility_event_type: 1
+  display_order: 5
+
+
+client_users:
+- username: 'c1user01'
+  password: 'password00'
+  active: false
+
+- username: 'c1user02'
+  password: 'password00'
+  active: false
+
+- username: 'c1user03'
+  password: 'password00'
+  active: false
+
+- username: 'c1muser01'
+  password: 'password00'
+  active: false
+  user_type: 1
+
+- username: 'c1muser02'
+  password: 'password00'
+  active: false
+  user_type: 1
+
+- username: 'testuser01'
+  password: 'password00'
+  active: false
+  user_type: 1
+
+- username: 'manager00'
+  password: 'password00'
+  active: true
+  user_type: 1
+
+- username: 'sakura01'
+  password: 'password01'
+  active: true
+  user_type: 0
+
+- username: 'baseball01'
+  password: 'password02'
+  active: true
+  user_type: 0
+
+- username: 'manager00_copy'
+  password: 'password00'
+  active: true
+  user_type: 1
+
+- username: 'sakura01_copy'
+  password: 'password00'
+  active: true
+  user_type: 0
+
+- username: 'baseball01_copy'
+  password: 'password00'
+  active: true
+  user_type: 0
+
+- username: 'superuser00_eycm'
+  password: 'password00'
+  active: true
+  user_type: 1
+
+
+client_users_authorities:
+# 情報政策課
+- username: 'manager00'
+  facility_event_name: '広島三次ワイナリー'
+  location_name: ''
+  authority: '001,003'
+
+- username: 'manager00'
+  facility_event_name: 'トレッタみよし'
+  location_name: ''
+  authority: '001,003'
+
+- username: 'manager00'
+  facility_event_name: ''
+  location_name: 'トレッタみよし駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00'
+  facility_event_name: ''
+  location_name: 'みよし運動公園南側駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00'
+  facility_event_name: ''
+  location_name: 'みよしあそびの王国前駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00'
+  facility_event_name: ''
+  location_name: 'みよし運動公園テニスコート前駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00'
+  facility_event_name: ''
+  location_name: 'みよし運動公園多目的広場駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00'
+  facility_event_name: ''
+  location_name: 'みよし運動公園北側駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00'
+  facility_event_name: ''
+  location_name: 'みよし運動公園東側駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00'
+  facility_event_name: ''
+  location_name: '東酒屋プール前駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00'
+  facility_event_name: ''
+  location_name: 'みよし運動公園北側駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00'
+  facility_event_name: '尾関山公園'
+  location_name: ''
+  authority: '001,003'
+
+- username: 'manager00'
+  facility_event_name: ''
+  location_name: '尾関山公園駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00'
+  facility_event_name: '三次さくら祭り'
+  location_name: ''
+  authority: '001,003'
+
+- username: 'manager00'
+  facility_event_name: ''
+  location_name: '三次もののけミュージアム駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00'
+  facility_event_name: ''
+  location_name: '広島三次ワイナリー'
+  authority: '001,002,003'
+
+- username: 'manager00'
+  facility_event_name: ''
+  location_name: '広島三次ワイナリー第2駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00'
+  facility_event_name: ''
+  location_name: '【臨時】三次中学校グラウンド'
+  authority: '001,002,003' 
+
+- username: 'manager00'
+  facility_event_name: ''
+  location_name: '【臨時】(株)加藤組駐車場'
+  authority: '001,002,003' 
+
+- username: 'manager00'
+  facility_event_name: ''
+  location_name: '【臨時】尾関山ポンプ場前駐車場'
+  authority: '001,002,003'
+
+# さくら祭り担当
+- username: 'sakura01'
+  facility_event_name: '尾関山公園'
+  location_name: ''
+  authority: '003'
+
+- username: 'sakura01'
+  facility_event_name: ''
+  location_name: '尾関山公園駐車場'
+  authority: '001,002'
+
+- username: 'sakura01'
+  facility_event_name: '三次さくら祭り'
+  location_name: ''
+  authority: '001,003'
+
+- username: 'sakura01'
+  facility_event_name: '三次もののけミュージアム'
+  location_name: ''
+  authority: '003'
+
+- username: 'sakura01'
+  facility_event_name: ''
+  location_name: '三次もののけミュージアム駐車場'
+  authority: '002'
+
+- username: 'sakura01'
+  facility_event_name: ''
+  location_name: '【臨時】三次中学校グラウンド'
+  authority: '001,002,003'
+
+- username: 'sakura01'
+  facility_event_name: ''
+  location_name: '【臨時】(株)加藤組駐車場'
+  authority: '001,002,003'  
+
+- username: 'sakura01'
+  facility_event_name: ''
+  location_name: '【臨時】尾関山ポンプ場前駐車場'
+  authority: '001,002,003'
+
+# 野球担当者
+- username: 'baseball01'
+  facility_event_name: ''
+  location_name: 'みよし運動公園南側駐車場'
+  authority: '002'
+
+- username: 'baseball01'
+  facility_event_name: ''
+  location_name: 'みよしあそびの王国前駐車場'
+  authority: '001,002'
+
+- username: 'baseball01'
+  facility_event_name: ''
+  location_name: 'みよし運動公園テニスコート前駐車場'
+  authority: '001,002'
+
+- username: 'baseball01'
+  facility_event_name: ''
+  location_name: 'みよし運動公園多目的広場駐車場'
+  authority: '001,002'
+
+- username: 'baseball01'
+  facility_event_name: ''
+  location_name: 'みよし運動公園北側駐車場'
+  authority: '001,002'
+
+- username: 'baseball01'
+  facility_event_name: ''
+  location_name: 'みよし運動公園東側駐車場'
+  authority: '001,002'
+
+- username: 'baseball01'
+  facility_event_name: ''
+  location_name: '東酒屋プール前駐車場'
+  authority: '001,002'
+
+- username: 'baseball01'
+  facility_event_name: ''
+  location_name: 'みよし運動公園北側駐車場'
+  authority: '001,002'
+
+# 情報政策課_EY・CM用
+- username: 'manager00_copy'
+  facility_event_name: '広島三次ワイナリー'
+  location_name: ''
+  authority: '001,003'
+
+- username: 'manager00_copy'
+  facility_event_name: 'トレッタみよし'
+  location_name: ''
+  authority: '001,003'
+
+- username: 'manager00_copy'
+  facility_event_name: ''
+  location_name: 'トレッタみよし駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00_copy'
+  facility_event_name: ''
+  location_name: 'みよし運動公園南側駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00_copy'
+  facility_event_name: ''
+  location_name: 'みよしあそびの王国前駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00_copy'
+  facility_event_name: ''
+  location_name: 'みよし運動公園テニスコート前駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00_copy'
+  facility_event_name: ''
+  location_name: 'みよし運動公園多目的広場駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00_copy'
+  facility_event_name: ''
+  location_name: 'みよし運動公園北側駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00_copy'
+  facility_event_name: ''
+  location_name: 'みよし運動公園東側駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00_copy'
+  facility_event_name: ''
+  location_name: '東酒屋プール前駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00_copy'
+  facility_event_name: ''
+  location_name: 'みよし運動公園北側駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00_copy'
+  facility_event_name: '尾関山公園'
+  location_name: ''
+  authority: '001,003'
+
+- username: 'manager00_copy'
+  facility_event_name: ''
+  location_name: '尾関山公園駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00_copy'
+  facility_event_name: '三次さくら祭り'
+  location_name: ''
+  authority: '001,003'
+
+- username: 'manager00_copy'
+  facility_event_name: ''
+  location_name: '三次もののけミュージアム駐車場'
+  authority: '001,002,003'
+
+- username: 'manager00_copy'
+  facility_event_name: '広島三次ワイナリー駐車場'
+  location_name: ''
+  authority: '001,002,003'  
+
+- username: 'manager00_copy'
+  facility_event_name: '広島三次ワイナリー第2駐車場'
+  location_name: ''
+  authority: '001,002,003'
+
+- username: 'manager00_copy'
+  facility_event_name: '【臨時】三次中学校グラウンド'
+  location_name: ''
+  authority: '001,002,003'
+
+- username: 'manager00_copy'
+  facility_event_name: '【臨時】(株)加藤組駐車場'
+  location_name: ''
+  authority: '001,002,003'  
+
+- username: 'manager00_copy'
+  facility_event_name: '【臨時】尾関山ポンプ場前駐車場'
+  location_name: ''
+  authority: '001,002,003'   
+
+# さくら祭り担当者_EY・CM用
+- username: 'sakura01_copy'
+  facility_event_name: '尾関山公園'
+  location_name: ''
+  authority: '003'
+
+- username: 'sakura01_copy'
+  facility_event_name: ''
+  location_name: '尾関山公園駐車場'
+  authority: '001,002'
+
+- username: 'sakura01_copy'
+  facility_event_name: '三次さくら祭り'
+  location_name: ''
+  authority: '001,003'
+
+- username: 'sakura01_copy'
+  facility_event_name: '三次もののけミュージアム'
+  location_name: ''
+  authority: '003'
+
+- username: 'sakura01_copy'
+  facility_event_name: ''
+  location_name: '三次もののけミュージアム駐車場'
+  authority: '002'
+
+- username: 'sakura01_copy'
+  facility_event_name: ''
+  location_name: '【臨時】三次中学校グラウンド'
+  authority: '001,002,003'
+
+- username: 'sakura01_copy'
+  facility_event_name: ''
+  location_name: '【臨時】(株)加藤組駐車場'
+  authority: '001,002,003'  
+
+- username: 'sakura01_copy'
+  facility_event_name: ''
+  location_name: '【臨時】尾関山ポンプ場前駐車場'
+  authority: '001,002,003'  
+
+# 野球担当者_EY・CM用
+- username: 'baseball01_copy'
+  facility_event_name: ''
+  location_name: 'みよし運動公園南側駐車場'
+  authority: '002'
+
+- username: 'baseball01_copy'
+  facility_event_name: ''
+  location_name: 'みよしあそびの王国前駐車場'
+  authority: '001,002'
+
+- username: 'baseball01_copy'
+  facility_event_name: ''
+  location_name: 'みよし運動公園テニスコート前駐車場'
+  authority: '001,002'
+
+- username: 'baseball01_copy'
+  facility_event_name: ''
+  location_name: 'みよし運動公園多目的広場駐車場'
+  authority: '001,002'
+
+- username: 'baseball01_copy'
+  facility_event_name: ''
+  location_name: 'みよし運動公園北側駐車場'
+  authority: '001,002'
+
+- username: 'baseball01_copy'
+  facility_event_name: ''
+  location_name: 'みよし運動公園東側駐車場'
+  authority: '001,002'
+
+- username: 'baseball01_copy'
+  facility_event_name: ''
+  location_name: '東酒屋プール前駐車場'
+  authority: '001,002'
+
+- username: 'baseball01_copy'
+  facility_event_name: ''
+  location_name: 'みよし運動公園北側駐車場'
+  authority: '001,002'
+
+# EY・CM用
+- username: 'superuser00_eycm'
+  facility_event_name: '広島三次ワイナリー'
+  location_name: ''
+  authority: '001,003'
+
+- username: 'superuser00_eycm'
+  facility_event_name: ''
+  location_name: '広島三次ワイナリー駐車場（自動カウント用※）'
+  authority: '001,002,003'
+
+- username: 'superuser00_eycm'
+  facility_event_name: 'トレッタみよし'
+  location_name: ''
+  authority: '001,003'
+
+- username: 'superuser00_eycm'
+  facility_event_name: ''
+  location_name: 'トレッタみよし駐車場'
+  authority: '001,002,003'
+
+- username: 'superuser00_eycm'
+  facility_event_name: ''
+  location_name: 'みよし運動公園南側駐車場'
+  authority: '001,002,003'
+
+- username: 'superuser00_eycm'
+  facility_event_name: ''
+  location_name: 'みよしあそびの王国前駐車場'
+  authority: '001,002,003'
+
+- username: 'superuser00_eycm'
+  facility_event_name: ''
+  location_name: 'みよし運動公園テニスコート前駐車場'
+  authority: '001,002,003'
+
+- username: 'superuser00_eycm'
+  facility_event_name: ''
+  location_name: 'みよし運動公園多目的広場駐車場'
+  authority: '001,002,003'
+
+- username: 'superuser00_eycm'
+  facility_event_name: ''
+  location_name: 'みよし運動公園北側駐車場'
+  authority: '001,002,003'
+
+- username: 'superuser00_eycm'
+  facility_event_name: ''
+  location_name: 'みよし運動公園東側駐車場'
+  authority: '001,002,003'
+
+- username: 'superuser00_eycm'
+  facility_event_name: ''
+  location_name: '東酒屋プール前駐車場'
+  authority: '001,002,003'
+
+- username: 'superuser00_eycm'
+  facility_event_name: ''
+  location_name: 'みよし運動公園北側駐車場'
+  authority: '001,002,003'
+
+- username: 'superuser00_eycm'
+  facility_event_name: '尾関山公園'
+  location_name: ''
+  authority: '001,003'
+
+- username: 'superuser00_eycm'
+  facility_event_name: ''
+  location_name: '尾関山公園駐車場'
+  authority: '001,002,003'
+
+- username: 'superuser00_eycm'
+  facility_event_name: '三次さくら祭り'
+  location_name: ''
+  authority: '001,003'
+
+- username: 'superuser00_eycm'
+  facility_event_name: ''
+  location_name: '三次もののけミュージアム駐車場'
+  authority: '001,002,003'
+
+- username: 'superuser00_eycm'
+  facility_event_name: ''
+  location_name: '広島三次ワイナリー駐車場'
+  authority: '001,002,003'  
+
+- username: 'superuser00_eycm'
+  facility_event_name: '広島三次ワイナリー第2駐車場'
+  location_name: ''
+  authority: '001,002,003'
+
+- username: 'superuser00_eycm'
+  facility_event_name: '【臨時】三次中学校グラウンド'
+  location_name: ''
+  authority: '001,002,003'
+
+- username: 'superuser00_eycm'
+  facility_event_name: '【臨時】(株)加藤組駐車場'
+  location_name: ''
+  authority: '001,002,003'  
+
+- username: 'superuser00_eycm'
+  facility_event_name: '【臨時】尾関山ポンプ場前駐車場'
+  location_name: ''
+  authority: '001,002,003'

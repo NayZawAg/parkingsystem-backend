@@ -1,0 +1,24 @@
+json.array! @settings.each do |setting|
+  json.call(
+    setting,
+    :id,
+    :name,
+    :address,
+    :opening_hours,
+    :phone_number,
+    :holiday,
+    :available_payment,
+    :offical_url,
+    :image,
+    :capacity,
+    :camera_flag,
+    :crowd_level_display,
+    :display_flag,
+    :outline,
+    :related_facilities_events,
+    :facility_event_type,
+    :display_order,
+    :authority,
+    :kbn
+  )
+end

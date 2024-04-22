@@ -1,0 +1,97 @@
+# see: https://docs.docker.com/compose/rails/
+FROM --platform=linux/x86_64 ruby:3.0.3
+
+# ARG
+ARG RAILS_ENV
+ENV LANG=C.UTF-8
+ENV TZ=Asia/Tokyo
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+# For Macbook pro with M1 Chip
+RUN wget --quiet -O - /tmp/pubkey.gpg https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+    echo 'deb http://dl.yarnpkg.com/debian/ stable main' > /etc/apt/sources.list.d/yarn.list
+RUN set -x && apt-get update -y -qq \
+            && apt-get upgrade -y \
+            && apt-get install -y \
+                yarn  \
+                nodejs \
+                vim \
+                curl \
+                apt-utils \
+                locales \
+                locales-all \
+                freetds-dev \
+                freetds-common \
+                freetds-bin \
+                build-essential \
+                libc6-dev \
+                openssh-server \
+                cron \
+            && echo "root:Docker!" | chpasswd \
+            && ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime \
+            && mkdir /app
+
+RUN apt-get install -y nodejs npm && npm install n -g && n 14.17.0
+
+# For Macbook pro with Intel Chip
+# RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -\
+#     && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -a\
+#     && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+#     && apt-get update -qq \
+#     && apt-get upgrade -y \
+#     && apt-get install -y \
+#         yarn  \
+#         nodejs \
+#         vim \
+#         curl \
+#         apt-utils \
+#         locales \
+#         locales-all \
+#         freetds-dev \
+#         freetds-common \
+#         freetds-bin \
+#         build-essential \
+#         libc6-dev \
+#         openssh-server \
+#         cron \
+#     && echo "root:Docker!" | chpasswd \
+#     && ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime \
+#     && mkdir /app
+
+# Copy the sshd_config file to the /etc/ssh/ directory
+COPY sshd_config /etc/ssh/
+
+# Copy and configure the ssh_setup file
+RUN mkdir -p /tmp
+COPY ssh_setup.sh /tmp
+RUN chmod +x /tmp/ssh_setup.sh \
+    && (sleep 1;/tmp/ssh_setup.sh 2>&1 > /dev/null)
+
+# Create mount directory
+RUN mkdir /var/apps
+RUN mkdir /var/apps/blobcontainer
+
+ENV ROOT="/app"
+WORKDIR ${ROOT}
+
+COPY Gemfile ${ROOT}/Gemfile
+COPY Gemfile.lock ${ROOT}/Gemfile.lock
+RUN gem install bundler
+RUN bundle install --jobs 4
+
+COPY yarn.lock ${ROOT}/yarn.lock
+COPY package.json ${ROOT}/package.json
+RUN yarn install
+
+COPY . ${ROOT}
+
+# DB migration
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
+
+# Open port 2222 for SSH access
+EXPOSE 3000 2222
+
+CMD ["rails", "server", "-b", "0.0.0.0"]

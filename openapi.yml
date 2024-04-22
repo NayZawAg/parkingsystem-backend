@@ -1,0 +1,602 @@
+openapi: '3.0.2'
+info:
+  title: Miyoshi Api
+  version: '1.0'
+servers:
+  - url: http://0.0.0.0:3000/api/v1
+paths:
+  /users:
+    post:
+      summary: ユーザー登録
+      operationId: userRegister
+      requestBody:
+        description: ユーザー登録情報
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - username
+                - password
+              properties:
+                client_id:
+                  type: integer
+                  description: クライアントID
+                  example: 1
+                username:
+                  type: string
+                  description: ユーザーID
+                  example: miyoshi
+                password:
+                  type: string
+                  description: パスワード
+                  example: password00
+                password_confirmation:
+                  type: string
+                  description: 確認パスワード
+                  example: password00
+      responses:
+        201:
+          description: 登録成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        404:
+          description: 取得失敗
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        422:
+          description: 検証失敗
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnprocessableEntity'
+  /users/login:
+    post:
+      summary: ログイン
+      operationId: login
+      requestBody:
+        description: ログイン
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - username
+                - password
+              properties:
+                username:
+                  type: string
+                  description: ユーザーID
+                  example: "miyoshi"
+                password:
+                  type: string
+                  description: パスワード
+                  example: "password00"
+      responses:
+        200:
+          description: 認証成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Auth'
+        401:
+          description: Invalid username or password
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedLogin'
+  /users/logout:
+    delete:
+      summary: ログアウト
+      operationId: logout
+      security:
+        - bearerAuth: []
+      responses:
+        204:
+          description: ログアウト成功
+        401:
+          description: 認証失敗
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized'
+  /users/me:
+    get:
+      summary: ユーザー情報取得
+      operationId: me
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: 認証成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        401:
+          description: 認証失敗
+          content:
+            application/json:
+                schema:
+                  $ref: '#/components/schemas/Unauthorized'
+  /parkings:
+    post:
+      summary: 入出庫データ登録
+      operationId: createParkingsData
+      requestBody:
+        description: 入出庫データ登録
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - camera_id
+                - result
+                - apikey
+              properties:
+                camera_id:
+                  type: integer
+                  description: カメラID
+                  example: 1
+                result:
+                  type: array
+                  description: 結果
+                  items:
+                    type: object
+                    properties:
+                      in_out:
+                        type: integer
+                        example: 1
+                      parking_time:
+                        type: string
+                        example: "2023-01-24 16:03:00"
+                      car_area:
+                        type: string
+                        example: "品川"
+                      car_number:
+                        type: string
+                        example: "た4215　34-60"
+                apikey:
+                  type: string
+                  example: "D4kKNYJOIIuF2MN7uJrnhvrDw"
+      responses:
+        201:
+          description: 認証成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/parkingCreated'
+        404:
+          description: 取得失敗
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+  /parkings/locations:
+    get:
+      summary: ロケーション情報の取得
+      operationId: getLocations
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: 取得成功
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Location'
+        401:
+          description: 認証失敗
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized'
+  /parkings/{:locationId}/congestion_rates:
+    get:
+      summary: 駐車場混雑率情報の取得
+      operationId: getParkingCongestionRates
+      parameters:
+      - name: day_type
+        in: query
+        description: 平日・休日・祝日
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: 取得成功
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ParkingCongestionRate'
+        400:
+          description: 送信失敗
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        401:
+          description: 認証失敗
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized'
+        404:
+          description: 取得失敗
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+  /parkings/resets:
+    get:
+      summary: 駐車場リセット
+      operationId: getParkingResets
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: 取得成功
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ResetParkings'
+        401:
+          description: 認証失敗
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized'
+  /parkings/create_reset:
+    post:
+        summary: 駐車場をリセット
+        operationId: resetParking
+        security:
+        - bearerAuth: []
+        requestBody:
+          description: リセット登録情報
+          required: true
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - location_id
+                  - total_in_count
+                  - reset_in_count
+                properties:
+                  location_id:
+                    type: integer
+                    description: 駐車場位置
+                    example: 1
+                  total_in_count:
+                    type: integer
+                    description: 現在の駐車車数
+                    example: 1
+                  reset_in_count:
+                    type: integer
+                    description: リセット車数
+                    example: 1
+        responses:
+          201:
+            description: 登録成功
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ResetParking'
+          401:
+            description: 認証失敗
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Unauthorized'
+          404:
+            description: 取得失敗
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/NotFound'
+          422:
+            description: 検証失敗
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/CreateResetUnprocessableEntity'
+  /locations:
+    get:
+      summary: ロケーション名称
+      operationId: getLocationName
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: 取得成功
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LocationName'
+        401:
+          description: 認証失敗
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized'
+  /parkings/situations:
+    get:
+      summary: 入出庫データの状況
+      operationId: getParkingSituations
+      security:
+        - bearerAuth: []
+      parameters:
+      - name: from_date
+        in: query
+        description: from_date
+        required: true
+        example: "2023-01-27"
+        schema:
+          type: string
+      - name: to_date
+        in: query
+        description: to_date
+        required: true
+        example: "2023-01-27"
+        schema:
+          type: string
+      - name: location_name
+        in: query
+        description: ロケーション名称
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: ページ
+        required: false
+        example: 1
+        schema:
+          type: integer
+      - name: per_page
+        in: query
+        description: パーページ
+        required: false
+        example: 10
+        schema:
+          type: integer
+      responses:
+        200:
+          description: ページとパーページパラメータがある場合の取得成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  out_count:
+                    type: integer
+                    example: 36
+                  in_count:
+                    type: integer
+                    example: 36
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ParkingSituations'
+                  meta:
+                    $ref: '#/components/schemas/Meta'
+        401:
+          description: 認証失敗
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized'
+        400:
+          description: 認証失敗
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+components:
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT    # optional, arbitrary value for documentation purposes
+  schemas:
+    Auth:
+      type: object
+      properties:
+        username:
+          type: string
+          example: miyoshi
+        usertype:
+          type: integer
+          example: 0
+        token:
+          type: string
+          example: ed33464bbcf830e4feca9203b0955c5916fda815a23da80da8a7bb62b8c6466dbc34a0
+        token_expired_at:
+          type: string
+          example: '2023-02-03T16:13:13.791+09:00'
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        username:
+          type: string
+          example: miyoshi
+        user_type:
+          type: integer
+          example: 0
+    Location:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "三次もののけミュージアム"
+        address:
+          type: string
+          example: "広島県三次市三次町１６９１−４"
+        lat:
+          type: string
+          example: "34.7778"
+        lng:
+          type: string
+          example: "132.86661"
+        image:
+          type: string
+          example: "HiroshimaMiyoshiWinery.jpg"
+        capacity:
+          type: integer
+          example: 10
+        start_time:
+          type: string
+          example: "9:00"
+        end_time:
+          type: string
+          example: "18:00"
+        current_total_in_count:
+          type: integer
+          example: 5
+    ParkingCongestionRate:
+      type: object
+      properties:
+        parking_time:
+          type: string
+          example: '9:00'
+        congestion_rate:
+          type: number
+          example: 30.25
+    ResetParkings:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: '三次もののけミュージアム'
+        pre_reset_datetime:
+          type: string
+          example: '2022-01-01 12:52:02'
+        pre_total_in_count:
+          type: integer
+          example: 1
+        pre_reset_in_count:
+          type: integer
+          example: 1
+        current_total_in_count:
+          type: integer
+          example: 1
+    ResetParking:
+      type: object
+      properties:
+        location_id:
+          type: integer
+          example: 1
+        total_in_count:
+          type: integer
+          example: 1
+        reset_in_count:
+          type: integer
+          example: 1
+    parkingCreated:
+      type: object
+    LocationName:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "広島三次ワイナリー"
+    ParkingSituations:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        in_out_flg:
+          type: boolean
+          example: false
+        parking_time:
+          type: string
+          example: "2023:01:25 07:17:00"
+        car_number:
+          type: string
+          example: "あ6243 31-32"
+        car_area:
+          type: string
+          example: "品川"
+    Meta:
+      type: object
+      properties:
+        current_page:
+          type: integer
+          example: 1
+        next_page:
+          type: integer
+          example: 2
+        prev_page:
+          type: integer
+          example: null
+        total_pages:
+          type: integer
+          example: 8
+        total_count:
+          type: integer
+          example: 72
+    BadRequest:
+      type: object
+      properties:
+        errors:
+          type: array
+          example: ["400 bad request"]
+    Unauthorized:
+      type: object
+      properties:
+        errors:
+          type: array
+          example: ["401 Unauthorized"]
+    UnauthorizedLogin:
+      type: object
+      properties:
+        errors:
+          type: array
+          example: ["ユーザー名またはパスワードに誤りがあります。"]
+    NotFound:
+      type: object
+      properties:
+        errors:
+          type: array
+          example: ["404 Not found"]
+    UnprocessableEntity:
+      type: object
+      properties:
+        errors:
+          type: array
+          example: ["Username is required."]
+    CreateResetUnprocessableEntity:
+      type: object
+      properties:
+        errors:
+          type: array
+          example: ["Total in count is required.", "Reset in count is required."]

@@ -1,0 +1,32 @@
+json.array! @facilities_events.each do |facilities_event|
+  json.call(
+    facilities_event,
+    :id,
+    :facilitiy_event_number,
+    :client_id,
+    :slug,
+    :scale,
+    :name,
+    :address,
+    :opening_hours,
+    :phone_number,
+    :holiday,
+    :available_payment,
+    :offical_url,
+    :lat,
+    :lng,
+    :image,
+    :disabled_flag,
+    :icon_revert_flag,
+    :gtag_event_name,
+    :gtag_event_card_name,
+    :display_flag,
+    :outline,
+    :facility_event_type,
+    :display_order,
+    :created_by,
+    :updated_by,
+    :created_at,
+    :updated_at
+  )
+end

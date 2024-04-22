@@ -1,0 +1,82 @@
+version: '3'
+x-rails-base: &rails_base
+  build: .
+  environment:
+    RAILS_ENV: development
+    RACK_ENV: development
+    NODE_ENV: development
+    RAILS_MASTER_KEY: 7cd690550b21a176659d2e098bc495a3
+    APP_DATABASE_HOST: db
+    APP_DATABASE_PORT: 1433
+    APP_DATABASE_NAME: miyoshi_development
+    APP_DATABASE_USERNAME: sa
+    FRONTEND_HOST: localhost:3000
+    REDIS_HOST: redis
+    REDIS_PORT: 6379
+    REDIS_PASSWORD: 123
+    API_KEY: "D4kKNYJOIIuF2MN7uJrnhvrDw"
+    SECRET_TOKEN: "39e991a558cffc31a472fec75a5c83e603dfa95955a4d6932fcb3529a7f32b7a"
+  volumes:
+    - .:/app
+    - bundle:/usr/local/bundle
+    - node_modules:/app/node_modules
+  links:
+    - db
+    - redis
+  depends_on:
+    - db
+    - redis
+  tty: true
+  stdin_open: true
+  networks:
+    - miyoshi-network
+services:
+  backend:
+    <<: *rails_base
+    container_name: miyoshi_backend
+    command: bash -c "rm -f tmp/pids/server.pid && bundle install && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    ports:
+      - 8000:3000
+  worker:
+    <<: *rails_base
+    container_name: miyoshi_worker
+    command: bash -c "rm -f tmp/pids/server.pid && bundle install && bundle exec sidekiq -C config/sidekiq.yml"
+  tools:
+    <<: *rails_base
+    container_name: miyoshi_tools
+    command: bash -c "rm -f tmp/pids/server.pid && bundle install && bundle exec solargraph socket --host=0.0.0.0 --port=7658"
+    ports:
+      - 7658:7658
+  db:
+    container_name: miyoshi_db
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    # image: mcr.microsoft.com/azure-sql-edge:latest # For Macbook pro with M1 Chip
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: P@ssw0rd2022
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssqldb:/opt/mssql
+      # - mssqldb:/var/opt/mssql # For Macbook pro with M1 Chip
+      - ./mssql/development/:/sqls
+    networks:
+      - miyoshi-network
+  redis:
+    container_name: miyoshi_redis
+    image: redis:latest
+    ports:
+      - 6379:6379
+    volumes:
+      - redis:/data
+    command: redis-server --appendonly yes --requirepass 123
+    networks:
+      - miyoshi-network
+volumes:
+  mssqldb:
+  redis:
+  bundle:
+  node_modules:
+networks:
+  miyoshi-network:
+    driver: bridge
